@@ -10,8 +10,9 @@ class Producer(object):
 
     def __init__(self):
         pass
-
+    
+    #metrics need to json data
     def send(self, metrics):
         #print (metrics)
-        producer.send('defender_agent', metrics)
+        producer.send('defender_agent', metrics.encode('utf-8'))
         producer.flush()
